@@ -1,0 +1,79 @@
+{
+  "mode": "play",
+
+  "ai": {
+    "agent": "",
+    "batch_size": 200,
+    "gpu": true,
+    "num_epochs": 1,
+
+    "zero": {
+      "dirichlet": {
+          "alpha": 2,
+          "epsilon": 0.2
+      },
+
+      "mcts": {
+        "c_puct": 4,
+        "iterations": 256,
+        "parallel": false
+      },
+
+      "net": {
+        "momentum": 0.1,
+        "learning rate": 0.00001,
+        "lr_gamma": 0.8,
+        "milestones": [1, 2, 4, 8, 16, 32],
+        "optimizer": "Adam",
+        "res_layers": 5
+      }
+    }
+  },
+
+  "directories": {
+    "local": false,
+    "model": {
+      "load_from": "",
+      "save_to": ""
+    },
+    "results": "",
+    "run": "",
+    "samples":{
+      "load_from": "",
+      "save_to": ""
+    }
+  },
+
+  "experiment": {
+    "games_per_improvement_test": 3,
+    "games_per_ground_test": 3,
+
+    "num_sets": 5,
+    "num_reps": 10,
+
+    "num_samples": 1
+  },
+
+  "game": {
+    "player_names": [],
+    "seed": null,
+    "victory_points_to_win": 10
+  },
+
+  "graphics": {
+    "display": false,
+    "turn_delay_s": 0.2
+  },
+
+  "logging": {
+    "level": "INFO",
+
+    "categories": {
+      "actions": false,
+      "experiment": true,
+      "game": true,
+      "infra": false,
+      "mcts": true
+    }
+  }
+}
